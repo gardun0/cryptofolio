@@ -1,9 +1,18 @@
 {
-    "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["last 2 versions"]
-      }
+  "presets": [
+      ["env", {
+        "targets": {
+          "browsers": ["last 2 versions"]
+        }
+      }]
+  ],
+
+  "plugins": [
+    "transform-es2015-spread",
+    "syntax-object-rest-spread",
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
     }]
   ]
 }

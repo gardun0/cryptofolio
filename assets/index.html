@@ -6,15 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CryptoFolio</title>
 
+    <!-- STYLING ;) -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Bree+Serif" rel="stylesheet"> 
     <link rel="stylesheet" href="./app.css" data-hot>
 </head>
 <body>
-    <main>
-        <section id="crypto-convertions">
-        </section>
-        <section id="crypto-transfer">
-            
-        </section>
-    </main>
+    <div id="crypto-content" class="container">
+        <a href="#" id="logo">¢ryptofolio.</a>
+        <div id="crypto-wallet" class="container">
+            <section id="crypto-convertions" class="container">
+                <h1>your wallet.</h1>
+            </section>
+            <section id="crypto-transfer">
+                <h1>transfer</h1>
+                <div class="transfer">
+                    <input type="number">
+                    <select name="cryptoFrom" id="cryptoFrom">
+                        <option value="btc">Bitcoin</option>
+                        <option value="eth">Ethereum</option>
+                        <option value="ltc">Litecoin</option>
+                        <option value="prg">Paragon</option>
+                    </select>
+                    <h2>to</h2>
+                    <select name="cryptoTo" id="cryptoTo">
+                        <option value="btc">Bitcoin</option>
+                        <option value="eth">Ethereum</option>
+                        <option value="ltc">Litecoin</option>
+                        <option value="prg">Paragon</option>
+                    </select>
+                    <button id="transfer-crypto-button">Transfer</button>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>

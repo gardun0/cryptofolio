@@ -1,5 +1,8 @@
+const EventEmitter = require('events').EventEmitter
+
 const State = function(initial = {}){
-  this._state = initial
+  this._initial = initial
+  this._state = this._initial;
 }
 
 State.prototype = {
@@ -7,9 +10,9 @@ State.prototype = {
     return this._state
   },
 
-  modify(key, value){
-    this._state[key] = value
-    return
+  modify(newData, callback){
+    this._state = Object.assign(this._state, newData)
+    callback(newData)
   }
 }
 

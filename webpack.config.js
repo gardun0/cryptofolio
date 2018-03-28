@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: [
+    path.resolve(__dirname, 'src/index.js'),
+    path.resolve(__dirname, 'src/styles.js')
+  ],
 
   mode: 'development',
 
@@ -22,7 +25,9 @@ module.exports = {
         test: /\.css$/,
         loader: ['webpack-extract-css-hot-reload'].concat(ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: "css-loader"
+            use: [
+              { loader: 'css-loader', options: { minimize: true }}
+            ]
         })),
       },
       {
@@ -31,7 +36,20 @@ module.exports = {
           loader: 'html-loader'
         }
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      }
     ]
+  },
+
+  resolve: {
+    extensions: ['.js', '.css'],
+    alias: {
+      normalize: path.join(__dirname, '/node_modules/normalize.css')
+    }
   },
 
   output: {

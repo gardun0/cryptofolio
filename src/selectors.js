@@ -1,14 +1,16 @@
 import * as Dom from './dom'
 
 const selectors = {
-  cryptoConvertions: Dom.getElem('#crypto-convertions'),
-  totalValue: Dom.getElem('#total-value')
+  totalValue: Dom.getElem('#total-value'),
+  transferButton: Dom.getElem('#transfer-crypto-button'),
+  inputValue: Dom.getElem('#transfer-value'),
+  selectCrypto: Dom.getElem('#cryptoFrom'),
+  currencies: {
+    BTC: Dom.getElem('#currency-btc'),
+    ETH: Dom.getElem('#currency-eth'),
+    LTC: Dom.getElem('#currency-ltc'),
+    PRG: Dom.getElem('#currency-prg')
+  }
 }
 
-const specialSelectors = {
-}
-
-export default {
-  ...selectors,
-  ...specialSelectors
-}
+export default selectors

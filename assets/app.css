@@ -66,7 +66,34 @@ section#crypto-transfer h1 {
 }
 
 section#crypto-transfer {
+    align-self: baseline;
     margin: 0 20px;
+}
+
+section#crypto-transfer div.transfer {
+    flex-flow: column wrap;
+}
+
+input#transfer-value {
+    font-size: 1.5em;
+}
+
+select#cryptoFrom {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+div#crypto-footer {
+    margin-top: 40px;
+    font-size: 1.3em;
+}
+
+div#crypto-footer a {
+    color: #F57C00;
+}
+
+div#crypto-footer .heart {
+    color: #D50000;
 }
 
 [id*="currency-"] {
@@ -139,11 +166,33 @@ section#crypto-transfer {
     display: flex;
 }
 
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.8em;
+    border: unset;
+}
+
+.btn.green {
+    color: #ffffff;
+    background: #4CAF50;
+}
+
+.half {
+    width: 50%;
+}
+
 @keyframes expand {
     from {
         padding: 0 10px;
     }
     to {
         padding: 0 60px 0 10px;
+    }
+}
+
+@media screen and (max-width: 617px) {
+    section#crypto-transfer h1{
+        margin-top: 40px;
     }
 }
